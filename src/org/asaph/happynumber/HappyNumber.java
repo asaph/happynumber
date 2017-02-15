@@ -1,7 +1,7 @@
 package org.asaph.happynumber;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class HappyNumber {
 	public static int nextNumber(int number) {
@@ -17,10 +17,10 @@ public class HappyNumber {
 	}
 
 	public static boolean isHappy(int number) {
-		return isHappy(number, new ArrayList<Integer>());
+		return isHappy(number, new HashSet<Integer>());
 	}
 
-	public static boolean isHappy(int number, List<Integer> numbersSoFar) {
+	public static boolean isHappy(int number, Set<Integer> numbersSoFar) {
 		int next = nextNumber(number);
 		if (next == 1) {
 			return true;
