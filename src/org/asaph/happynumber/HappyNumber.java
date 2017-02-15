@@ -5,13 +5,11 @@ import java.util.Set;
 
 public class HappyNumber {
 	public static int nextNumber(int number) {
-		String numberString = Integer.toString(number);
-		int sum=0;
-		for (int i=0, length=numberString.length(); i<length; i++) {
-			char ch = numberString.charAt(i);
-			int digit = Integer.parseInt("" + ch);
-			int square = digit * digit;
-			sum += square;
+		int sum = 0;
+		while (number != 0) {
+			int digit = number % 10;
+			sum += digit * digit;
+			number = (number - digit) / 10;
 		}
 		return sum;
 	}
